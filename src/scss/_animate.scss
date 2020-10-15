@@ -1,0 +1,17 @@
+.first-sect {
+  width: 1200px;
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(217, 220, 223);
+
+  .test-content {
+    display: flex;
+    width: 350px;
+    height: 700px;
+    border-radius: 40px;
+    background-color: black;
+
+  }
+}
