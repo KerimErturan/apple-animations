@@ -13,17 +13,34 @@
   var animateMain = () => {
     controlMain = new ScrollMagic.Controller();
 
-    var tween1 = TweenMax.staggerFromTo(".test-content", 1,
-        { position: 'relative', top: 500 },
-        { position: 'fixed', top: 100 },
+    var tweenBack = TweenMax.staggerFromTo(".animate-sect__iphon", 1,
+        {  top: 700  },
+        {  top: 100 },
         0.15);
-    var firstScena = new ScrollMagic.Scene({
-        triggerElement: "#start_trigger", duration: 10, offset: 1
-    }).setTween(tween1)
-    .addIndicators({name: "test-content"});
+    var backScena = new ScrollMagic.Scene({
+        triggerElement: "#start_trigger", duration: 500, offset: 100
+    }).setTween(tweenBack)
+    .addIndicators({name: "01"});
 
+    var tweenBlock01 = TweenMax.staggerFromTo(".block-01", 1,
+        { width: 500, height: 200, marginLeft: -75 },
+        { width: 300, height: 120, marginLeft: 25 },
+        0.15);
+    var block01_Scena = new ScrollMagic.Scene({
+        triggerElement: "#start_trigger", duration: 200, offset: 100+500
+    }).setTween(tweenBlock01)
+    .addIndicators({name: "block_01_Scena"});
+
+    var textAnim = TweenMax.staggerFromTo(".block__text__anim", 1,
+        { fontSize: 30 },
+        { fontSize: 14 },
+        0.15);
+    var text_Scena = new ScrollMagic.Scene({
+        triggerElement: "#start_trigger", duration: 200, offset: 100+500
+    }).setTween(textAnim)
+    .addIndicators({name: "block_01_Scena"});
     controlMain.addScene([
-      firstScena
+      backScena, block01_Scena, text_Scena
     ]);
   }
 

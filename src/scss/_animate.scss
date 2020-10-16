@@ -1,17 +1,79 @@
 .first-sect {
   width: 1200px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.animate-sect {
+  width: 1200px;
   height: 200vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  background-color: rgb(217, 220, 223);
+  background-color: rgb(0, 0, 0);
 
-  .test-content {
+  &__iphon {
+    position: fixed;
     display: flex;
+    top: 700px;
     width: 350px;
     height: 700px;
+    border: 2px solid white;
     border-radius: 40px;
     background-color: black;
 
+  }
+  .block {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    margin-top: 250px;
+    margin-left: -75px;
+    padding: 3% 8%;
+
+    &__img {
+      width: 30%;
+      height: 100%;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../img/shturval.jpg);
+    }
+
+    &__text {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      padding-left: 2%;
+
+      & h4 {
+        font-size: 30px;
+      }
+      & p {
+        font-size: 30px;
+      }
+    }
+
+    &__end {
+      width: 20%;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .first-sect, .animate-sect {
+    width: 100%;
   }
 }
